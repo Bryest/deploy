@@ -1,0 +1,33 @@
+-> GENERICO
+	- security
+		a. user(player)
+
+	- payment
+		a. game-coin
+		b. order-game-coin
+		c. order-guide -> falta
+		d. checkout
+		e. capture
+
+	- profile
+		a. coach
+
+-> CORE
+	- game management
+		a. game
+
+	- guide management
+		a. guide
+		b. detail-guide -> falta
+
+	- sessions management -> falta
+		a. coaching-session
+
+	- reports -> falta
+		a. coach-report
+
+-> SOPORTE
+	- gateway
+	- registry
+	- admin
+	- config

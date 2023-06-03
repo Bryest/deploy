@@ -1,0 +1,5 @@
+1. config
+2. registry
+3. admin
+3. gateway
+4. todos los demas services...

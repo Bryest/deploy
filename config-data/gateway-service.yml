@@ -1,0 +1,33 @@
+server:
+  port: 8080
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8099/eureka/
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: security-service
+          uri: lb://security-service
+          predicates:
+            - Path=/users/**
+        - id: profile-service
+          uri: lb://profile-service
+          predicates:
+            - Path=/coaches/**
+        - id: payment-service
+          uri: lb://game-coin-service
+          predicates:
+            - Path=/game-coin-offers/**, /order-detail-game-coins/**, /order-game-coins/**, /detail-cards/**, /payments/**, /captures/**
+        - id: game-management-service
+          uri: lb://game-service
+          predicates:
+            - Path=/games/**
+        - id: guide-management-service
+          uri: lb://guide-service
+          predicates:
+            - Path=/guides/**, /categories/**
